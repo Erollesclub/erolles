@@ -1,0 +1,91 @@
+/* Reset básico para remover margens padrão e definir a fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0a0a0a; /* Fundo quase preto, bem minimalista */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Barra de Navegação (Navbar) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff; /* Link fica branco ao passar o mouse */
+}
+
+/* Banner Principal (Hero Section) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Imagem de fundo temporária e escura */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1920') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    letter-spacing: 12px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #8c8c8c;
+    letter-spacing: 3px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}
+
+/* Botão Elegante */
+.btn {
+    display: inline-block;
+    padding: 16px 45px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000; /* Inverte as cores ao passar o mouse */
+    cursor: pointer;
+}
