@@ -12,6 +12,7 @@
             --card-bg: #16161a;
             --border-color: #2c2c35;
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --luxury-font: "Cinzel", "Didot", "Playfair Display", "Times New Roman", serif;
         }
 
         * {
@@ -24,45 +25,164 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-family);
-            padding: 50px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
-        header {
+        /* HERO SECTION (CAPA DO SITE COM A LONDRA) */
+        .hero-section {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(13, 13, 13, 0.4) 0%, rgba(13, 13, 13, 0.95) 100%), 
+                        url('image_28.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
             text-align: center;
-            margin-bottom: 60px;
-            width: 100%;
-            max-width: 1200px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 40px;
         }
 
-        .brand-logo {
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 6px;
+        /* HEADER DENTRO DA HERO */
+        .hero-header {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .hero-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 12px;
-            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .hero-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .hero-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: var(--luxury-font);
+            transition: color 0.3s ease;
+        }
+
+        .hero-nav a:hover {
+            color: #ffffff;
+        }
+
+        /* CONTEÚDO CENTRAL DA HERO */
+        .hero-content {
+            z-index: 10;
+            max-width: 800px;
+            margin-bottom: 5vh;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            background: linear-gradient(180deg, #ffffff 0%, #d1d1d6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        header p {
-            color: #8e8e93;
-            font-size: 1.1rem;
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #e5e5ea;
             letter-spacing: 2px;
+            margin-bottom: 40px;
+            font-weight: 300;
             text-transform: uppercase;
         }
 
+        .hero-btn {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            background-color: #e5e5ea;
+        }
+
+        .hero-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* BRAND MANIFESTO (Abaixo da Hero) */
+        .brand-manifesto {
+            text-align: center;
+            max-width: 800px;
+            margin: 80px auto 60px auto;
+            padding: 0 20px;
+            z-index: 5;
+        }
+
+        .brand-manifesto h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .brand-manifesto p {
+            font-size: 1.05rem;
+            color: #a1a1aa;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .brand-manifesto p strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .brand-manifesto .divider {
+            width: 50px;
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 30px auto 0 auto;
+        }
+
+        /* CATALOG CONTAINER */
         .catalog-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 40px;
             width: 100%;
             max-width: 1200px;
+            padding: 20px;
         }
 
         .product-card {
@@ -247,17 +367,20 @@
             padding-top: 30px;
             width: 100%;
             max-width: 1200px;
+            padding-bottom: 30px;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 30px 15px;
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
             }
-            .brand-logo {
-                font-size: 2.2rem;
+            .hero-subtitle {
+                font-size: 1rem;
             }
-            header p {
-                font-size: 0.9rem;
+            .hero-header {
+                flex-direction: column;
+                gap: 15px;
             }
             .catalog-container {
                 grid-template-columns: 1fr;
@@ -267,12 +390,39 @@
 </head>
 <body>
 
-    <header>
-        <div class="brand-logo">Erolles Club</div>
-        <p>Summer Drop 2026 — Limited Edition</p>
-    </header>
+    <!-- HERO SECTION (CAPA PRINCIPAL COM A LONDRA) -->
+    <section class="hero-section">
+        <header class="hero-header">
+            <a href="#" class="hero-logo">Erolles Club</a>
+            <nav class="hero-nav">
+                <a href="#">Coleções</a>
+                <a href="#">A Marca</a>
+                <a href="#">Contato</a>
+            </nav>
+        </header>
 
-    <div class="catalog-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Erolles Club</h1>
+            <p class="hero-subtitle">Onde a atitude urbana encontra a elegância atemporal.</p>
+            <a href="#catalog" class="hero-btn">Explorar Peças</a>
+        </div>
+
+        <!-- Div vazia para balancear o flexbox do justify-content: space-between -->
+        <div></div>
+    </section>
+
+    <!-- MANIFESTO DE MARCA -->
+    <section class="brand-manifesto">
+        <h2>Não seja um clone.</h2>
+        <p>Olhe ao seu redor. Onde quer que você vá, as pessoas parecem vestir o mesmo uniforme. A mesma produção em massa, a mesma falta de alma.</p>
+        <p>A <strong>Erolles Club</strong> nasceu na intersecção entre a atitude urbana e a elegância atemporal. Fundimos o peso do <em>streetwear</em> com o refinamento estético do <em>old money</em>. Um luxo silencioso, focado na estrutura, no corte e no propósito.</p>
+        <p>Desenvolvido para quem recusa o comum. Exclusivo, marcante e acessível.</p>
+        <p><strong>Vista sua própria história. Entre para o clube.</strong></p>
+        <div class="divider"></div>
+    </section>
+
+    <!-- CONTAINER DE PRODUTOS -->
+    <div class="catalog-container" id="catalog">
 
         <!-- PRODUCT 1: MALIBU VIBE -->
         <div class="product-card" id="product-malibu">
